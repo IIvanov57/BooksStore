@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @JsonInclude
-public class AuthResponse {
+public class AuthReq {
 
     private String userName;
     private String password;

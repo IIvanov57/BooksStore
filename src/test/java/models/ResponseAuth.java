@@ -1,2 +1,19 @@
-package models;public class ResponseAuth {
+package models;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+
+import java.util.Date;
+
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ResponseAuth {
+
+    private String userId;
+    private String username;
+    private String password;
+    private String token;
+    private Date expires;
+    private Date created_date;
+    private boolean isActive;
 }
