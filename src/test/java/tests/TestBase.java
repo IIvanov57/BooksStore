@@ -17,7 +17,7 @@ public class TestBase {
 
         RestAssured.baseURI = "https://demoqa.com";
         baseUrl = "https://demoqa.com";
-        //remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
     }
 }
