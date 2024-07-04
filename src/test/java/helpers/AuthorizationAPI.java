@@ -14,10 +14,10 @@ import static spec.GeneralSpec.responseSpec;
 public class AuthorizationAPI {
 
     @Step("Авторизоваться на сайте")
-    public static ResponseAuth auth() {
+    public static ResponseAuth auth(String userName, String userPassword) {
         AuthReq authReq = new AuthReq();
-        authReq.setUserName("IIvanov");
-        authReq.setPassword("Admin1234!");
+        authReq.setUserName(userName);
+        authReq.setPassword(userPassword);
 
         ResponseAuth response = given()
                 .spec(requestSpec)
@@ -36,5 +36,9 @@ public class AuthorizationAPI {
         getWebDriver().manage().addCookie(new Cookie("expires", response.getExpires().toString()));
 
         return response;
+    }
+
+    public static String getTokenForClient(ResponseAuth response) {
+        return response.getToken();
     }
 }
